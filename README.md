@@ -31,12 +31,16 @@ We have tested the following versions of OS and softwares:
 pip install -r requirements.txt
 ```
 ### Dataset
-Download the offical dataset and convert to a format appropriate for this project. See [here](./data_preparation).
-We provide ready-made annotation files we generated offline for reference. You can directly use these files for convenice.
+### Prepare SUN RGB-D Data
 
-|                                                        Dataset                                                         |                                                                                                           Train annotation file                                                                                                           |                                                                                                        Val annotation file                                                                                                         |                                                    Test information file                                                     |
-| :--------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
-|                                                       SUN RGB-D                                                        |                                                               [sunrgbd_infos_train.pkl](https://download.openmmlab.com/mmdetection3d/data/sunrgbd/sunrgbd_infos_train.pkl)                                                                |                                                              [sunrgbd_infos_val.pkl](https://download.openmmlab.com/mmdetection3d/data/sunrgbd/sunrgbd_infos_val.pkl)                                                              |                                                                                                                              |
+1. Download SUNRGBD v2 data [HERE](http://rgbd.cs.princeton.edu/data/) (SUNRGBD.zip, SUNRGBDMeta2DBB_v2.mat, SUNRGBDMeta3DBB_v2.mat) and the toolkits (SUNRGBDtoolbox.zip). Move all the downloaded files under OFFICIAL_SUNRGBD. Unzip the zip files.
+
+2. Extract point clouds and annotations (class, v2 2D -- xmin,ymin,xmax,ymax, and 3D bounding boxes -- centroids, size, 2D heading) by running `extract_split.m`, `extract_rgbd_data_v2.m` and `extract_rgbd_data_v1.m` under the `matlab` folder.
+
+We provide ready-made annotation files we generated offline for reference, which are provided by MMdetection3D. You can directly use these files for convenice.
+|                                                        Dataset                                                         |                                                                                                           Train annotation file                                                                    |                                                                                                        Val annotation file                                                                             |
+| :--------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                       SUN RGB-D                                                        |                                                               [sunrgbd_infos_train.pkl](https://download.openmmlab.com/mmdetection3d/data/sunrgbd/sunrgbd_infos_train.pkl)                         |                                             [sunrgbd_infos_val.pkl](https://download.openmmlab.com/mmdetection3d/data/sunrgbd/sunrgbd_infos_val.pkl)                                                   |      
 
 
 Or download the converted dataset:
@@ -68,3 +72,8 @@ Or download the converted dataset:
 
 ### Finetuning on RGB-D segmentation:
 We transfer the obtained weights of our Multi-modal Arbitrary Rotation based Self-supervised Learning to DeepLabv3 and ShapeConv(https://github.com/hanchaoleng/ShapeConv) methods as initialization.
+
+
+### Acknowledgement
+
+This repository is based on [MMSegmentation](https://github.com/open-mmlab/mmsegmentation),[MMDetection3D](https://github.com/open-mmlab/mmdetection3d), [MMSelfsup](https://github.com/open-mmlab/mmselfsup), [ShapeConv](https://github.com/hanchaoleng/ShapeConv)
