@@ -5,10 +5,10 @@ This is the 《Multi-modal Arbitrary Rotation based Self-supervised Learning for
 For the ArbRot operation, please refer to ArbRot\mmseg\datasets\pipelines\transforms_img_hha.py RotateCircleImgAndHHA function
 
 For the Multi-modal Multi-task Self-supervised Learning, please refer to 
-ArbRot\mmseg\models\segmentators\MoCoUnet0801.py for MoCo,  
-ArbRot\mmseg\models\segmentators\SimCLRUnet1026 for SimCLR,
-ArbRot\mmseg\models\segmentators\BYOLUnet1026 for BYOL,
-ArbRot\mmseg\models\segmentators\SimSiamUnet0623 for SimSiam
+ArbRot\mmseg\models\segmentators\MoCoUnet0801.py for MoCo,  \
+ArbRot\mmseg\models\segmentators\SimCLRUnet1026 for SimCLR, \
+ArbRot\mmseg\models\segmentators\BYOLUnet1026 for BYOL, \
+ArbRot\mmseg\models\segmentators\SimSiamUnet0623 for SimSiam \
 
 ## Usage
 ### Installation
@@ -70,7 +70,7 @@ Or download the converted dataset:
     python tools/train.py config_path  --no-validate
     ```
 
-### Finetuning on RGB-D segmentation:
+## Finetuning on RGB-D segmentation:
 We transfer the obtained weights of our Multi-modal Arbitrary Rotation based Self-supervised Learning to DeepLabv3 and ShapeConv(https://github.com/hanchaoleng/ShapeConv) methods as initialization.
 
 
