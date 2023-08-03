@@ -4,7 +4,7 @@ This is the 《Multi-modal Arbitrary Rotation based Self-supervised Learning for
 
 For the ArbRot operation, please refer to ArbRot\mmseg\datasets\pipelines\transforms_img_hha.py RotateCircleImgAndHHA function
 
-For the Multi-modal Multi-task Self-supervised Learning, please refer to: \ 
+For the Multi-modal Multi-task Self-supervised Learning, please refer to:  
 ArbRot\mmseg\models\segmentators\MoCoUnet0801.py for MoCo,  \
 ArbRot\mmseg\models\segmentators\SimCLRUnet1026 for SimCLR, \
 ArbRot\mmseg\models\segmentators\BYOLUnet1026 for BYOL, \
